@@ -1,0 +1,25 @@
+server:
+  port:
+    9001
+
+spring:
+  main:
+    banner-mode: OFF
+
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:kafkaorderdb
+  kafka:
+    listener:
+      missing-topics-fatal: false
+    producer:
+      bootstrap-servers:
+      - localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+
+
+
